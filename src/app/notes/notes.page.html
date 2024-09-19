@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Notas</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/add-note">Añadir Nota</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let note of notes" (click)="openNote(note)">
+      <ion-label>
+        <h2>{{ note.title }}</h2>
+        <p>{{ note.content }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
